@@ -23,10 +23,10 @@ public class LoginActivity extends AppCompatActivity {
         UserLoginInputEmail = (EditText) findViewById(R.id.login_edit_email);
         UserLoginInputPassword = (EditText) findViewById(R.id.login_edit_password);
         UserLoginButton = (Button) findViewById(R.id.login_button_signin);
-
         UserLoginRegisterButton = (TextView) findViewById(R.id.login_text_register);
         UserLoginForgetPasswordButton = (TextView) findViewById(R.id.login_text_forget_password);
 
+        //
         UserLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

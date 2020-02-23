@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".authentication.LoginActivity"></activity>
+        <activity android:name=".authentication.UpdatePhoneNumberActivity"></activity>
+        <activity android:name=".authentication.UpdateProfileImageActivity" />
+        <activity android:name=".authentication.UpdateNameActivity" />
+        <activity android:name=".authentication.ForgetPasswordActivity" />
+        <activity android:name=".authentication.RegisterActivity" />
+        <activity android:name=".authentication.LoginActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
