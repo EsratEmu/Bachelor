@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">Bachelor</string>
+
+    <!-- text -->
+    <string name="text_email">Email</string>
+    <string name="text_password">Password</string>
+    <string name="text_loading">Loading</string>
+    <string name="text_login">Login</string>
+    <string name="text_register">Register</string>
+    <string name="text_need_help">Need help ?</string>
+    <string name="text_already_have_account">Already Have Account?</string>
+    <string name="text_back">Back</string>
+    <string name="text_next">Next</string>
+    <string name="text_send_email">Send Email</string>
+    <string name="text_sign_out">Sign Out</string>
+    <string name="text_first_name">First Name</string>
+    <string name="text_last_name">Last Name</string>
+    <string name="text_update">Update</string>
+    <string name="text_mobile_number">Mobile Number</string>
+    <string name="text_select_image">Select Image</string>
+    <string name="text_verification_code">Verification code</string>
+    <string name="text_verify">Verify</string>
+    <string name="text_edit_number">Edit Mobile Number</string>
+    <string name="text_name">Name</string>
+    <string name="text_mobile">Mobile</string>
+    <string name="text_address">Address</string>
+    <string name="text_about">About</string>
+    <string name="text_chat">Chat</string>
+
+    <string name="text_forget_password_info">Enter your registered user email. We will send a verification link to your email. Do not share verification code with anyone.</string>
+    <string name="text_login_info">Enter your email and password to login into app. For new member register your email first.</string>
+    <string name="text_register_info">Enter your email and password to register new account. For old member login to your account on login page.</string>
+    <string name="text_update_name_info">Enter your first and second name to identify user that who you are.</string>
+    <string name="text_update_phone_info">Enter your phone number to verify or login your account alternately.</string>
+    <string name="text_update_image_info">Select an image for your profile picture and update to identify you by other users.</string>
 </resources>

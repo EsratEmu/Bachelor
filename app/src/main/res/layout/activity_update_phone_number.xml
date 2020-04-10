@@ -1,9 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".authentication.UpdatePhoneNumberActivity">
+    tools:context=".authentication.UpdatePhoneNumberActivity"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/size_15"
+    android:paddingRight="@dimen/size_15">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="@dimen/size_135"
+        android:layout_height="@dimen/size_135"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/size_10"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/waiting_people" />
+
+    <TextView
+        android:id="@+id/update_phone_number_text_phone_number_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/size_15"
+        android:text="@string/text_update_phone_info"
+        android:textColor="@color/colorAccent" />
+
+    <TextView
+        android:id="@+id/update_phone_number_text_verify_code_hint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/size_15"
+        android:text="@string/text_loading"
+        android:textColor="@color/colorPrimary"
+        android:visibility="gone"/>
+
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/update_phone_number_edit_country_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_25"
+        app:ccp_showFullName="true"
+        app:ccp_showPhoneCode="true"
+        app:ccp_showNameCode="true"
+        app:ccp_defaultNameCode="BD"
+        app:ccp_countryPreference="BD,IN,US"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/update_phone_number_edit_phone_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_5"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:startIconDrawable="@drawable/ic_local_phone"
+        android:hint="@string/text_mobile_number"
+        app:errorEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/update_phone_number_edit_verification_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_5"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:startIconDrawable="@drawable/ic_vpn_key"
+        android:hint="@string/text_verification_code"
+        android:visibility="gone"
+        app:errorEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/update_phone_number_button_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_5"
+        android:padding="@dimen/size_10"
+        android:text="@string/text_update"
+        android:textColor="@color/colorBlack"
+        app:icon="@drawable/ic_arrow_forward"
+        app:iconTint="@color/colorBlack"
+        app:iconGravity="textEnd" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/update_phone_number_button_verify_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_5"
+        android:padding="@dimen/size_10"
+        android:text="@string/text_verify"
+        app:iconGravity="textEnd"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/update_phone_number_text_phone_number_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/size_10"
+        android:text="@string/text_edit_number"
+        android:textColor="@android:color/black"
+        android:visibility="gone"/>
+
+
+</LinearLayout>

@@ -7,39 +7,49 @@
     android:layout_height="match_parent"
     tools:context=".authentication.RegisterActivity"
     android:orientation="vertical"
-    android:padding="15dp">
+    android:paddingLeft="@dimen/size_15"
+    android:paddingRight="@dimen/size_15">
 
     <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:src="@mipmap/ic_launcher"
-        android:layout_marginTop="50dp"
-        android:layout_gravity="center"/>
+        android:layout_width="@dimen/size_135"
+        android:layout_height="@dimen/size_135"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/size_10"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/register_book" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/size_15"
+        android:text="@string/text_register_info"
+        android:textColor="@color/colorAccent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/register_edit_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="@dimen/size_25"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:startIconDrawable="@drawable/abc_vector_test"
-        android:hint="Email"
+        app:startIconDrawable="@drawable/ic_email"
+        android:hint="@string/text_email"
         app:errorEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"/>
+            android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/register_edit_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="@dimen/size_5"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:startIconDrawable="@drawable/abc_vector_test"
-        android:hint="Password"
+        app:startIconDrawable="@drawable/ic_lock"
+        android:hint="@string/text_password"
         app:errorEnabled="true"
         app:passwordToggleEnabled="true">
 
@@ -53,17 +63,21 @@
         android:id="@+id/register_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:padding="5dp"
-        android:text="Register"/>
+        android:layout_marginTop="@dimen/size_5"
+        android:padding="@dimen/size_10"
+        android:text="@string/text_register"
+        android:textColor="@color/colorBlack"
+        app:iconTint="@color/colorBlack"
+        app:icon="@drawable/ic_arrow_forward"
+        app:iconGravity="textEnd" />
 
     <TextView
-        android:id="@+id/register_text_login_link"
+        android:id="@+id/register_text_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="Already Have Account?"
-        android:textColor="@android:color/black" />
+        android:layout_marginTop="@dimen/size_10"
+        android:text="@string/text_already_have_account"
+        android:textColor="@color/colorBlack" />
 
 </LinearLayout>
