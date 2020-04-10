@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- user section -->
+    <group android:checkableBehavior="single"
+        android:id="@+id/menu_drawer_user_group">
+        <item
+            android:title="Profile"
+            android:id="@+id/main_menu_profile"
+            android:icon="@drawable/ic_profile"/>
+        <item
+            android:title="Notification"
+            android:id="@+id/main_menu_notification"
+            android:icon="@drawable/ic_notification"/>
+    </group>
+
+    <!-- app service section -->
+    <group android:checkableBehavior="single"
+        android:id="@+id/menu_drawer_service_group">
+        <item
+            android:title="B Meal"
+            android:id="@+id/main_menu_bmeal"
+            android:icon="@drawable/menu_bmeal"/>
+
+        <item
+            android:title="B Chat"
+            android:id="@+id/main_menu_bchat"
+            android:icon="@drawable/menu_bchat"/>
+
+        <item
+            android:title="B Task"
+            android:id="@+id/main_menu_btask"
+            android:icon="@drawable/menu_btask"/>
+
+        <item
+            android:title="B Shop"
+            android:id="@+id/main_menu_bshop"
+            android:icon="@drawable/menu_bshop"/>
+    </group>
+
+    <!-- about app section -->
+    <group android:checkableBehavior="single"
+        android:id="@+id/menu_drawer_app_group">
+        <item
+            android:title="Logout"
+            android:id="@+id/main_menu_logout"
+            android:icon="@drawable/menu_logout"/>
+
+        <item
+            android:title="Support"
+            android:id="@+id/main_menu_support"
+            android:icon="@drawable/menu_support"/>
+        <item
+            android:title="Settings"
+            android:id="@+id/main_menu_settings"
+            android:icon="@drawable/menu_settings"/>
+    </group>
+
+</menu>
