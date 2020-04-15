@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:paddingTop="@dimen/size_10"
+    android:paddingBottom="@dimen/size_10"
+    android:paddingLeft="@dimen/size_25"
+    android:paddingRight="@dimen/size_25"
+    android:background="@drawable/bg_dialog"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog_default_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="@dimen/text_18"
+        android:layout_gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:textAlignment="center"/>
+
+    <TextView
+        android:id="@+id/dialog_default_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_5"
+        android:text="@string/text_loading"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/dialog_default_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_10"
+        android:text="@string/text_loading"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textSize="@dimen/text_16"
+        android:textColor="@color/colorPurple"
+        android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/dialog_default_pre_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_15"
+        android:hint="@string/text_loading"
+        android:background="@drawable/bg_dialog"
+        android:padding="@dimen/size_15"
+        android:inputType="textLongMessage"
+        android:autofillHints="@string/app_name"
+        android:visibility="gone"/>
+
+    <EditText
+        android:id="@+id/dialog_default_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_15"
+        android:hint="@string/text_loading"
+        android:background="@drawable/bg_dialog"
+        android:padding="@dimen/size_15"
+        android:inputType="textLongMessage"
+        android:autofillHints="@string/app_name"
+        android:visibility="gone"/>
+
+
+    <Switch
+        android:id="@+id/dialog_default_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_15"
+        android:padding="@dimen/size_15"
+        android:text="@string/text_action"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/size_15"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dialog_default_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_5"
+            android:layout_marginRight="@dimen/size_5"
+            android:layout_weight="1"
+            android:text="@string/text_cancel"
+            android:visibility="gone"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/dialog_default_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_5"
+            android:layout_marginRight="@dimen/size_5"
+            android:layout_weight="1"
+            android:text="@string/text_ok"/>
+    </LinearLayout>
+
+</LinearLayout>

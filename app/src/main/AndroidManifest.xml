@@ -15,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".NotificationActivity"/>
+        <activity android:name=".admin.UserViewActivity" android:parentActivityName=".admin.AdminActivity"></activity>
+        <activity android:name=".admin.ComplainViewActivity" android:parentActivityName=".admin.AdminActivity"/>
+        <activity android:name=".WebActivity" android:parentActivityName=".SupportActivity"/>
+        <activity android:name=".NotificationActivity" />
         <activity android:name=".BShopActivity" />
         <activity android:name=".BTaskActivity" />
         <activity android:name=".BChatActivity" />
@@ -30,7 +33,8 @@
         <activity android:name=".authentication.ForgetPasswordActivity" />
         <activity android:name=".authentication.RegisterActivity" />
         <activity android:name=".authentication.LoginActivity" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:hardwareAccelerated="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

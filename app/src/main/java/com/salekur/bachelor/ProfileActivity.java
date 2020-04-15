@@ -110,7 +110,7 @@ public class ProfileActivity extends AppCompatActivity {
                     LoadingBar.setMessage("Updating status");
                     LoadingBar.setCanceledOnTouchOutside(false);
                     LoadingBar.show();
-                    RootRef.child("Users").child(CurrentUserID).child("information").child("about").setValue(ProfileAbout).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    RootRef.child("Users").child(CurrentUserID).child("about").setValue(ProfileAbout).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
@@ -141,7 +141,7 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void RetrieveUserProfileInformation() {
-        RootRef.child("Users").child(ProfileID).child("information").addValueEventListener(new ValueEventListener() {
+        RootRef.child("Users").child(ProfileID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {

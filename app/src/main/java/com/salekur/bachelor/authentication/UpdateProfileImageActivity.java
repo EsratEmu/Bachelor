@@ -99,7 +99,7 @@ public class UpdateProfileImageActivity extends AppCompatActivity {
     }
 
     private void RetrieveUserProfileImage() {
-        RootRef.child("Users").child(CurrentUser.getUid()).child("information").child("profile_image").addValueEventListener(new ValueEventListener() {
+        RootRef.child("Users").child(CurrentUser.getUid()).child("profile_image").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
@@ -191,7 +191,7 @@ public class UpdateProfileImageActivity extends AppCompatActivity {
                             StorageRef.child("images").child("profile_image").child(CurrentUser.getUid()).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
-                                    RootRef.child("Users").child(CurrentUser.getUid()).child("information").child("profile_image").setValue(uri.toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    RootRef.child("Users").child(CurrentUser.getUid()).child("profile_image").setValue(uri.toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {

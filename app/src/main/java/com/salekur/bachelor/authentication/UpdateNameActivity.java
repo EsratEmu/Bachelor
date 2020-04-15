@@ -71,7 +71,7 @@ public class UpdateNameActivity extends AppCompatActivity {
     }
 
     private void RetrieveUserNameFromDatabase() {
-        RootRef.child("Users").child(CurrentUser.getUid()).child("information").addValueEventListener(new ValueEventListener() {
+        RootRef.child("Users").child(CurrentUser.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
@@ -120,7 +120,7 @@ public class UpdateNameActivity extends AppCompatActivity {
                     Information.put("first_name", FirstName);
                     Information.put("last_name", LastName);
 
-                    RootRef.child("Users").child(CurrentUser.getUid()).child("information").updateChildren(Information).addOnCompleteListener(new OnCompleteListener() {
+                    RootRef.child("Users").child(CurrentUser.getUid()).updateChildren(Information).addOnCompleteListener(new OnCompleteListener() {
                         @Override
                         public void onComplete(@NonNull Task task) {
                             if (task.isSuccessful()) {

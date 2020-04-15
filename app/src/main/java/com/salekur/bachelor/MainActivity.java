@@ -7,18 +7,25 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.salekur.bachelor.authentication.LoginActivity;
@@ -42,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
     // variables for this activity
     private FirebaseUser CurrentUser;
+    private DatabaseReference RootRef;
+
+    private ProgressDialog LoadingBar;
     private String CurrentUserName, CurrentUserEmail, CurrentUserPhoneNumber;
     private Uri CurrentUserImage;
 
@@ -112,6 +122,9 @@ public class MainActivity extends AppCompatActivity {
 
         // getting current user from firebase database
         CurrentUser = FirebaseAuth.getInstance().getCurrentUser();
+        RootRef = FirebaseDatabase.getInstance().getReference();
+
+        LoadingBar = new ProgressDialog(this);
     }
 
     @Override
@@ -121,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
         if (CurrentUser == null) { // if user is not found on opening this activity
             SendUserToLoginActivity(); // then sending user to login activity
         } else { // else user has found means already logged in then work in this activity
-            InitializeUserVariables();
+            CheckCurrentServerStatus();
         }
     }
 
@@ -151,11 +164,17 @@ public class MainActivity extends AppCompatActivity {
         } else { // user has set up all the information which we need us
             UpdateUserHome(); // so work in this activity
 
-            FirebaseDatabase.getInstance().getReference().child("Users").child(CurrentUser.getUid()).child("information").child("profile_image").addValueEventListener(new ValueEventListener() {
+            LoadingBar.setMessage("Checking profile");
+            LoadingBar.setCanceledOnTouchOutside(false);
+            LoadingBar.show();
+            RootRef.child("Users").child(CurrentUser.getUid()).child("profile_image").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (!dataSnapshot.exists()) {
+                        LoadingBar.dismiss();
                         SendUserToUpdateProfileImageActivity();
+                    } else {
+                        LoadingBar.dismiss();
                     }
                 }
 
@@ -188,6 +207,56 @@ public class MainActivity extends AppCompatActivity {
 
 
     // basic functions for this activity
+    private void CheckCurrentServerStatus() {
+        LoadingBar.setMessage("Checking server");
+        LoadingBar.setCanceledOnTouchOutside(false);
+        LoadingBar.show();
+        RootRef.child("Bachelor").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.child("Admins").hasChild(CurrentUser.getUid())) {
+                    LoadingBar.dismiss();
+                    InitializeUserVariables();
+                } else {
+                    LoadingBar.dismiss();
+                    if (dataSnapshot.child("Server").child("status").getValue().toString().equals("down")) {
+                        final Dialog dialog = new Dialog(MainActivity.this);
+                        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                        dialog.setCancelable(false);
+                        dialog.setContentView(R.layout.dialog_default);
+
+                        TextView DialogTitle = (TextView) dialog.findViewById(R.id.dialog_default_title);
+                        TextView DialogBody = (TextView) dialog.findViewById(R.id.dialog_default_message);
+                        MaterialButton DialogOk = (MaterialButton) dialog.findViewById(R.id.dialog_default_ok);
+
+                        DialogTitle.setText("Server Down");
+                        DialogTitle.setTextColor(Color.RED);
+                        DialogBody.setText("Sorry! Bachelor server has down. Please try again later");
+                        DialogBody.setVisibility(View.VISIBLE);
+
+                        DialogOk.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+                                UserSignOut();
+                            }
+                        });
+
+                        dialog.show();
+                    } else {
+                        LoadingBar.dismiss();
+                        InitializeUserVariables();
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
     private void UserSignOut() {
         // signing out from account
         FirebaseAuth.getInstance().signOut();

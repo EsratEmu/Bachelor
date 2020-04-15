@@ -118,7 +118,7 @@ public class UpdatePhoneNumberActivity extends AppCompatActivity {
         if (CurrentUser == null) {
             SendUserToLoginActivity();
         } else {
-            RootRef.child("Users").child(CurrentUser.getUid()).child("information").child("phone_number").addValueEventListener(new ValueEventListener() {
+            RootRef.child("Users").child(CurrentUser.getUid()).child("phone_number").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     if (dataSnapshot.exists()) {
@@ -178,7 +178,7 @@ public class UpdatePhoneNumberActivity extends AppCompatActivity {
         LoadingBar.setCanceledOnTouchOutside(false);
         LoadingBar.show();
 
-        RootRef.child("Users").child(CurrentUser.getUid()).child("information").child("phone_number").setValue(PhoneNumberWithCountryCode).addOnCompleteListener(new OnCompleteListener() {
+        RootRef.child("Users").child(CurrentUser.getUid()).child("phone_number").setValue(PhoneNumberWithCountryCode).addOnCompleteListener(new OnCompleteListener() {
             @Override
             public void onComplete(@NonNull Task task) {
                 if (task.isSuccessful()) {

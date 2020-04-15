@@ -1,9 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BMealActivity">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".BMealActivity"
+    android:background="@color/colorWhite">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/bmeal_pre_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include android:id="@+id/bmeal_pre_toolbar"
+            layout="@layout/toolbar_layout"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bmeal_button_create_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/size_55"
+            android:layout_marginRight="@dimen/size_55"
+            android:text="Create Group"
+            android:layout_centerInParent="true"
+            android:visibility="visible"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bmeal_post_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/bmeal_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+            <include android:id="@+id/bmeal_post_toolbar"
+                layout="@layout/toolbar_layout"/>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/bmeal_tab_bar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_40"
+                android:background="@color/colorPrimary"
+                android:layout_marginLeft="@dimen/size_10"
+                android:layout_marginRight="@dimen/size_10"
+                android:paddingLeft="@dimen/size_5"
+                android:paddingRight="@dimen/size_5"
+                android:scrollbars="none"
+                app:tabMode="scrollable" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/bmeal_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/bmeal_app_bar"
+            android:layout_marginLeft="@dimen/size_10"
+            android:layout_marginRight="@dimen/size_10"
+            android:layout_marginBottom="@dimen/size_10"/>
+    </RelativeLayout>
+
+</RelativeLayout>

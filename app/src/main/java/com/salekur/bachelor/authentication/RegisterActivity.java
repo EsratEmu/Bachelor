@@ -135,7 +135,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 UserInformation.put("register_day", time.getDayInNumber());
                                 UserInformation.put("register_time", time.getTimeInTogether());
 
-                                RootRef.child("Users").child(mAuth.getCurrentUser().getUid()).child("information").updateChildren(UserInformation).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                RootRef.child("Users").child(mAuth.getCurrentUser().getUid()).updateChildren(UserInformation).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {

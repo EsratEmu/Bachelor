@@ -10,6 +10,7 @@
     <dimen name="size_25">25dp</dimen>
     <dimen name="size_30">30dp</dimen>
     <dimen name="size_35">35dp</dimen>
+    <dimen name="size_40">40dp</dimen>
     <dimen name="size_50">50dp</dimen>
     <dimen name="size_55">55dp</dimen>
     <dimen name="size_75">75dp</dimen>
@@ -17,6 +18,7 @@
     <dimen name="size_135">135dp</dimen>
     <dimen name="size_170">170dp</dimen>
 
+    <dimen name="text_6">6sp</dimen>
     <dimen name="text_8">8sp</dimen>
     <dimen name="text_10">10sp</dimen>
     <dimen name="text_12">12sp</dimen>

@@ -24,8 +24,24 @@
     <string name="text_name">Name</string>
     <string name="text_mobile">Mobile</string>
     <string name="text_address">Address</string>
-    <string name="text_about">About</string>
     <string name="text_chat">Chat</string>
+    <string name="text_support">Support</string>
+    <string name="text_bmeal">B Meal</string>
+    <string name="text_bchat">B Chat</string>
+    <string name="text_btask">B Task</string>
+    <string name="text_bshop">B Shop</string>
+    <string name="text_website">Website</string>
+    <string name="text_blog">Blog</string>
+    <string name="text_live_chat">Live Chat</string>
+    <string name="text_about">About</string>
+    <string name="text_complain">Complain</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="text_ok">Ok</string>
+    <string name="text_server">Server</string>
+    <string name="text_users">Users</string>
+    <string name="text_admin">Admin</string>
+    <string name="text_action">Action</string>
+    <string name="text_empty">Empty</string>
 
     <string name="text_forget_password_info">Enter your registered user email. We will send a verification link to your email. Do not share verification code with anyone.</string>
     <string name="text_login_info">Enter your email and password to login into app. For new member register your email first.</string>
@@ -33,4 +49,5 @@
     <string name="text_update_name_info">Enter your first and second name to identify user that who you are.</string>
     <string name="text_update_phone_info">Enter your phone number to verify or login your account alternately.</string>
     <string name="text_update_image_info">Select an image for your profile picture and update to identify you by other users.</string>
+
 </resources>

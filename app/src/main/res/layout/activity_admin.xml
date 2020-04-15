@@ -1,14 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:scrollbars="none"
+    android:fillViewport="true"
     tools:context=".admin.AdminActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/admin_recycler_view"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/gradient_support">
 
-</RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_10"
+            android:layout_marginLeft="@dimen/size_20"
+            android:layout_marginRight="@dimen/size_20">
+
+            <TextView
+                android:id="@+id/admin_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_loading"
+                android:textSize="@dimen/text_18"
+                android:textColor="@color/colorWhite"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/admin_user_image"
+                android:layout_width="@dimen/size_40"
+                android:layout_height="@dimen/size_40"
+                android:src="@drawable/boy_image"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:rowCount="3"
+            android:columnCount="2"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/admin_card_complain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                app:cardElevation="@dimen/size_5"
+                app:cardCornerRadius="@dimen/size_10"
+                android:layout_margin="@dimen/size_10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/size_15"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="@dimen/size_75"
+                        android:layout_height="@dimen/size_75"
+                        android:src="@drawable/image_complain"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_complain"
+                        android:textSize="@dimen/text_18"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/size_10"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/admin_card_users"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                app:cardElevation="@dimen/size_5"
+                app:cardCornerRadius="@dimen/size_10"
+                android:layout_margin="@dimen/size_10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/size_15"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="@dimen/size_75"
+                        android:layout_height="@dimen/size_75"
+                        android:src="@drawable/image_users"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_users"
+                        android:textSize="@dimen/text_18"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/size_10"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/admin_card_add_admin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                app:cardElevation="@dimen/size_5"
+                app:cardCornerRadius="@dimen/size_10"
+                android:layout_margin="@dimen/size_10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/size_15"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="@dimen/size_75"
+                        android:layout_height="@dimen/size_75"
+                        android:src="@drawable/image_admin"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_admin"
+                        android:textSize="@dimen/text_18"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/size_10"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/admin_card_server"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                app:cardElevation="@dimen/size_5"
+                app:cardCornerRadius="@dimen/size_10"
+                android:layout_margin="@dimen/size_10">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/size_15"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="@dimen/size_75"
+                        android:layout_height="@dimen/size_75"
+                        android:src="@drawable/image_pause"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_server"
+                        android:textSize="@dimen/text_18"
+                        android:textColor="@color/colorPrimary"
+                        android:layout_marginTop="@dimen/size_10"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</ScrollView>
