@@ -145,7 +145,9 @@ public class GroupChatActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()){
-                    currentUserName = dataSnapshot.child("information").child("first_name").getValue().toString();
+                    if (dataSnapshot.hasChild("first_name")) {
+                        currentUserName = dataSnapshot.child("first_name").getValue().toString();
+                    }
                 }
             }
 

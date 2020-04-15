@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".GroupChatActivity"></activity>
-        <activity android:name=".FindFriendsContacts" />
+        <activity android:name=".FindFriendsContacts"
+            android:parentActivityName=".BChatActivity"/>
         <activity
             android:name=".admin.UserViewActivity"
             android:parentActivityName=".admin.AdminActivity" />
