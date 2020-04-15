@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/user_profile_image_contacts_bchat"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/boy_image"
+            android:background="@drawable/outline_bg"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/size_5">
+
+                <TextView
+                    android:id="@+id/user_profile_name_contacts_bchat"
+                    android:layout_width="235dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="start"
+                    android:layout_marginLeft="@dimen/size_10"
+                    android:text="User name"
+                    android:textSize="@dimen/size_20"
+                    android:textColor="@color/colorBlue"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/user_online_status_bchat"
+                    android:layout_width="@dimen/size_25"
+                    android:layout_height="@dimen/size_25"
+                    android:layout_marginTop="@dimen/size_10"
+                    android:src="@drawable/ic_arrow_forward"
+                    android:visibility="invisible"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/user_status_contacts_bchat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginLeft="@dimen/size_15"
+                android:text="Hey There! I am using Bachelor"
+                android:textSize="@dimen/size_15"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

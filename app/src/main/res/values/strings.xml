@@ -50,4 +50,7 @@
     <string name="text_update_phone_info">Enter your phone number to verify or login your account alternately.</string>
     <string name="text_update_image_info">Select an image for your profile picture and update to identify you by other users.</string>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

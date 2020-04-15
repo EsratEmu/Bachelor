@@ -15,9 +15,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".admin.UserViewActivity" android:parentActivityName=".admin.AdminActivity"></activity>
-        <activity android:name=".admin.ComplainViewActivity" android:parentActivityName=".admin.AdminActivity"/>
-        <activity android:name=".WebActivity" android:parentActivityName=".SupportActivity"/>
+        <activity android:name=".GroupChatActivity"></activity>
+        <activity android:name=".FindFriendsContacts" />
+        <activity
+            android:name=".admin.UserViewActivity"
+            android:parentActivityName=".admin.AdminActivity" />
+        <activity
+            android:name=".admin.ComplainViewActivity"
+            android:parentActivityName=".admin.AdminActivity" />
+        <activity
+            android:name=".WebActivity"
+            android:parentActivityName=".SupportActivity" />
         <activity android:name=".NotificationActivity" />
         <activity android:name=".BShopActivity" />
         <activity android:name=".BTaskActivity" />
