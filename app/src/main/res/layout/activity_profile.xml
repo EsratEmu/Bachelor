@@ -247,8 +247,7 @@
             android:paddingLeft="@dimen/size_55"
             android:paddingRight="@dimen/size_55"
             android:layout_marginTop="@dimen/size_30"
-            android:background="@drawable/outline_bg"
-            android:visibility="gone"/>
+            android:background="@drawable/round_corner_bg"/>
         <!-- chat button end -->
 
     </LinearLayout>

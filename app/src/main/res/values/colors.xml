@@ -2,6 +2,9 @@
 <resources>
     <color name="colorPrimary">#feca30</color>
     <color name="colorPrimaryDark">#feca30</color>
+
+    <color name="colorPrimaryLight">#E9FAEE7E</color>
+    <color name="colorSilver">#C3C1B8</color>
     <color name="colorAccent">#1ABAF1</color>
 
     <color name="colorPurple">#8a2be2</color>

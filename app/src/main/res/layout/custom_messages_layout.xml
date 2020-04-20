@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/size_2"
+    android:layout_marginLeft="@dimen/size_5"
+    android:layout_marginRight="@dimen/size_5"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="@dimen/size_35"
+        android:layout_height="@dimen/size_35"
+        android:id="@+id/messege_profile_image"
+        android:background="@drawable/outline_bg"
+        android:src="@drawable/boy_image"/>
+
+    <TextView
+        android:id="@+id/receiver_text_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginLeft="@dimen/size_10"
+        android:layout_toEndOf="@id/messege_profile_image"
+        android:layout_toRightOf="@id/messege_profile_image"
+        android:background="@drawable/silver_msg_layout"
+        android:paddingLeft="@dimen/size_10"
+        android:paddingTop="6dp"
+        android:paddingRight="@dimen/size_10"
+        android:paddingBottom="6dp"
+        android:text="receiver msg here"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/text_16"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/sender_text_msg"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="@+id/receiver_text_msg"
+        android:background="@drawable/colorful_msg_layout"
+        android:text="sender messages"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_16"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:paddingLeft="@dimen/size_10"
+        android:paddingRight="@dimen/size_10"
+        android:layout_marginRight="@dimen/size_5"
+        android:textColor="@color/colorBlack" />
+
+
+</RelativeLayout>

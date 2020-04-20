@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="@string/text_loading"
             android:textSize="@dimen/text_8"
-            android:visibility="invisible"/>
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/information_body"

@@ -14,7 +14,7 @@
         android:id="@+id/find_friends_recycler_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/size_20"
+        android:padding="@dimen/size_5"
         android:layout_below="@+id/find_friend_toolbar">
 
 

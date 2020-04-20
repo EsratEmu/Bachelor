@@ -2,7 +2,7 @@ package com.salekur.bachelor.classes;
 
 public class Contacts
 {
-    public String first_name, last_name, about, profile_image;
+    public String first_name, last_name, about, profile_image, phone_number;
 
     public Contacts()
     {
@@ -10,11 +10,12 @@ public class Contacts
 
     }
 
-    public Contacts(String first_name, String last_name, String about, String profile_image) {
+    public Contacts(String first_name, String last_name, String about, String profile_image, String phone_number) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.about = about;
         this.profile_image = profile_image;
+        this.phone_number = phone_number;
     }
 
     public String getFirst_name() {
@@ -47,5 +48,13 @@ public class Contacts
 
     public void setProfile_image(String profile_image) {
         this.profile_image = profile_image;
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 }

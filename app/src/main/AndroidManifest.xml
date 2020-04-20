@@ -15,9 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".GroupChatActivity"></activity>
-        <activity android:name=".FindFriendsContacts"
-            android:parentActivityName=".BChatActivity"/>
+        <activity android:name=".PrivateChatActivity"/>
+        <activity android:name=".GroupChatActivity" />
+        <activity
+            android:name=".FindFriendsContacts"
+            android:parentActivityName=".BChatActivity" />
         <activity
             android:name=".admin.UserViewActivity"
             android:parentActivityName=".admin.AdminActivity" />

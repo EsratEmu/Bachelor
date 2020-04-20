@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.salekur.bachelor.authentication.LoginActivity;
 import com.salekur.bachelor.classes.Contacts;
+import com.salekur.bachelor.classes.ViewHolder;
 import com.squareup.picasso.Picasso;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -64,46 +65,45 @@ public class FindFriendsContacts extends AppCompatActivity {
         }
 
 
-        FirebaseRecyclerOptions<Contacts> options = new FirebaseRecyclerOptions.Builder<Contacts>()
-                .setQuery(RootRef.child("Users"), Contacts.class).build();
-
-        FirebaseRecyclerAdapter<Contacts, FindFriendsViewHolder> adapter = new FirebaseRecyclerAdapter<Contacts, FindFriendsViewHolder>(options) {
+        FirebaseRecyclerOptions<Contacts> options = new FirebaseRecyclerOptions.Builder<Contacts>().setQuery(RootRef.child("Users"), Contacts.class).build();
+        FirebaseRecyclerAdapter<Contacts, ViewHolder> adapter = new FirebaseRecyclerAdapter<Contacts, ViewHolder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull FindFriendsViewHolder holder, int position, @NonNull Contacts model) {
-                holder.userNameBchat.setText((model.getFirst_name() + " " + model.getLast_name()));
-                holder.userStatusBchat.setText(model.getAbout());
-                Picasso.get().load(model.getProfile_image()).placeholder(R.drawable.boy_image).into(holder.profileImageBchat);
+            protected void onBindViewHolder(@NonNull ViewHolder holder, final int position, @NonNull Contacts model) {
+                holder.InfoTitle.setText((model.getFirst_name() + " " + model.getLast_name()));
+                holder.InfoSubTitle.setText(model.getPhone_number());
+                holder.InfoBody.setText(model.getAbout());
+                Picasso.get().load(model.getProfile_image()).placeholder(R.drawable.boy_image).into(holder.InfoImage);
+
+                //holder.InfoSubTitle.setVisibility(View.VISIBLE);
+                holder.InfoBody.setVisibility(View.VISIBLE);
+
+                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        String visit_user_id = getRef(position).getKey();
+
+                        Intent profileIntent = new Intent(FindFriendsContacts.this, ProfileActivity.class);
+                        profileIntent.putExtra("ProfileID", visit_user_id);
+
+                        startActivity(profileIntent);
+                    }
+                });
 
             }
 
 
             @NonNull
             @Override
-            public FindFriendsViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.contact_display_layout, viewGroup, false);
-                FindFriendsViewHolder viewHolder = new FindFriendsViewHolder(view);
+            public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
+                View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.information_layout, viewGroup, false);
+                ViewHolder viewHolder = new ViewHolder(view);
                 return viewHolder;
             }
 
         };
-
         FindFriendsRecyclerList.setAdapter(adapter);
-
         adapter.startListening();
-    }
-
-    public static class FindFriendsViewHolder extends RecyclerView.ViewHolder {
-        TextView userNameBchat, userStatusBchat;
-        CircleImageView profileImageBchat;
-
-        public FindFriendsViewHolder(@NonNull View itemView) {
-            super(itemView);
-
-            userNameBchat = itemView.findViewById(R.id.user_profile_name_contacts_bchat);
-            userStatusBchat = itemView.findViewById(R.id.user_status_contacts_bchat);
-            profileImageBchat = itemView.findViewById(R.id.user_profile_image_contacts_bchat);
-
-        }
     }
 
     private void SendUserToLoginActivity () {

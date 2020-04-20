@@ -4,41 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GroupChatActivity">
+    tools:context=".PrivateChatActivity">
 
     <include
-        android:id="@+id/group_chat_bar_layout"
+        android:id="@+id/private_chat_toolbar"
         layout="@layout/toolbar_layout">
     </include>
 
-    <ScrollView
-        android:id="@+id/my_scroll_view"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/private_msg_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/group_chat_bar_layout"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/private_chat_toolbar"
         android:layout_above="@+id/myLinearLayout">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/group_chat_text_display"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:textAllCaps="false"
-                android:textSize="20sp"
-                android:textColor="@color/colorBlack"
-                android:layout_marginStart="2dp"
-                android:layout_marginEnd="2dp"
-                android:layout_marginBottom="30dp"/>
-
-        </LinearLayout>
-
-    </ScrollView>
-
+    </androidx.recyclerview.widget.RecyclerView>
 
     <LinearLayout
         android:id="@+id/myLinearLayout"
@@ -50,15 +30,19 @@
         android:layout_alignParentLeft="true">
 
         <EditText
-            android:id="@+id/input_group_msg"
+            android:id="@+id/input_private_chat_msg"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:hint=" Write your message..."
-            android:padding="10dp"
-            android:background="@drawable/outline_bg"/>
+            android:paddingTop="@dimen/size_10"
+            android:paddingBottom="@dimen/size_10"
+            android:paddingLeft="@dimen/size_15"
+            android:paddingRight="@dimen/size_15"
+            android:background="@drawable/outline_bg"
+            android:backgroundTint="@color/colorSilver"/>
 
         <ImageView
-            android:id="@+id/send_msg_button"
+            android:id="@+id/send_chat_msg_button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/image_send"

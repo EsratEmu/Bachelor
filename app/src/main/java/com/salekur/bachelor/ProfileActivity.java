@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
@@ -62,8 +63,11 @@ public class ProfileActivity extends AppCompatActivity {
         XmlUserAddress = (TextView) findViewById(R.id.profile_user_address);
         XmlUserAbout = (TextView) findViewById(R.id.profile_user_about);
 
+        CurrentUserID = getIntent().getExtras().get("ProfileID").toString();
+
         XmlProfileBackButton = (FrameLayout) findViewById(R.id.profile_button_back);
         XmlChatWithVisitorButton = (TextView) findViewById(R.id.profile_button_chat);
+
 
         SetButtonController();
     }
@@ -200,6 +204,8 @@ public class ProfileActivity extends AppCompatActivity {
         XmlUserAbout.setClickable(true);
         XmlUserEmail.setClickable(true);
         XmlUserPhoneNumber.setClickable(true);
+
+        XmlChatWithVisitorButton.setVisibility(View.GONE);
     }
 
     private void ControlAsOtherProfile() {
@@ -269,25 +275,6 @@ public class ProfileActivity extends AppCompatActivity {
                 SendUserToChatActivity();
             }
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     private void SendUserToMainActivity() {
@@ -302,10 +289,9 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void SendUserToChatActivity() {
-        //Intent ChatIntent = new Intent(ProfileActivity.this, ChatActivity.class);
-        //ChatIntent.putExtra("ProfileID", ProfileID);
-        //startActivity(ChatIntent);
-        Toast.makeText(this, "Coming Soon", Toast.LENGTH_SHORT).show();
+        Intent ChatIntent = new Intent(ProfileActivity.this, PrivateChatActivity.class);
+        ChatIntent.putExtra("ProfileID", ProfileID);
+        startActivity(ChatIntent);
     }
 
     private void SendUserToUpdateNameActivity() {
